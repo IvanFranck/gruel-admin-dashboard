@@ -1,11 +1,11 @@
 ---
 description: 
-globs: 
+globs: src/components/menu/**/*.tsx,src/pages/Menu.tsx
 alwaysApply: false
 ---
 ---
 description: Règle Cursor pour la gestion hiérarchique du menu dans l’admin Gruel Traiteur
-globs: ["components/app/menu/**/*.tsx", "pages/galery."]
+globs: ["src/components/menu/**/*.tsx", "src/pages/Menu.tsx"]
 alwaysApply: false
 ---
 

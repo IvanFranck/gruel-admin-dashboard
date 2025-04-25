@@ -1,10 +1,12 @@
 ---
 description: 
-globs: 
+globs: src/components/galery/**/*.tsx,src/pages/Galery.tsx
 alwaysApply: false
 ---
 ---
 description: Génération d’une galerie d’images pour l’interface admin Gruel Traiteur
+globs: ["src/components/galery/**/*.tsx", "src/pages/Galery.tsx"]
+alwaysApply: false
 ---
 
 ## 🎯 Objectif

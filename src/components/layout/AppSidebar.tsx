@@ -42,7 +42,7 @@ export function AppSidebar() {
                                 </SidebarMenuButton>
                             </SidebarMenuItem>
                             <SidebarMenuItem>
-                                <SidebarMenuButton asChild>
+                                <SidebarMenuButton>
                                     Sections & Sous-sections
                                 </SidebarMenuButton>
                                 <SidebarMenuSub>

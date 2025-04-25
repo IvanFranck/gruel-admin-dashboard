@@ -8,7 +8,7 @@ import { Plus } from 'lucide-react';
 import { SectionItem } from '@/components/menu/SectionItem';
 import { AddSectionDialog } from '@/components/menu/AddSectionDialog';
 
-export function Menu() {
+export default function MenuPage() {
     const { sections, reorderSections } = useMenuStore();
     const [isAddSectionOpen, setIsAddSectionOpen] = useState(false);
 

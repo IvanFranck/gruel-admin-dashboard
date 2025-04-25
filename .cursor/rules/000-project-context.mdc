@@ -31,6 +31,7 @@ L'interface est composée :
 ## 🧱 Technologies utilisées
 
 - Frontend : React + TypeScript
+- State: Zustand
 - Styling : Tailwind CSS
 - Formulaires : react-hook-form + zod
 - Drag & Drop : @dnd-kit/core

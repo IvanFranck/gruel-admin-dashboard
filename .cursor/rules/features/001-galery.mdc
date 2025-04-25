@@ -1,0 +1,48 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: Génération d’une galerie d’images pour l’interface admin Gruel Traiteur
+---
+
+## 🎯 Objectif
+
+Créer une galerie d’images dans l’interface d’administration permettant à l’utilisateur :
+
+- D’importer des images (drag-and-drop ou sélection multiple)
+- De prévisualiser les images en grille après ajout
+- De supprimer une image individuellement (avec confirmation)
+- De naviguer facilement même sur mobile
+
+## 🧩 Comportements attendus
+
+- Upload multiple avec `<input type="file" multiple />`
+- Affichage immédiat (prévisualisation avec `URL.createObjectURL`)
+- Galerie en grille responsive 
+
+Chaque image est présentée dans une carte avec :
+
+- Miniature
+- Bouton "Supprimer"
+
+- Message de confirmation avant suppression
+
+- Affichage d’un toast ou d’un message de retour après action
+
+## 🔧 Technologies et outils
+
+- React + TypeScript
+- Tailwind CSS
+- Zod
+- Zustand
+- Shadcn UI
+
+Utilisation recommandée de composants
+
+## 📱 Responsive
+Le composant doit être utilisable en mobile :
+
+- Grille fluide
+- Boutons accessibles même sur petit écran

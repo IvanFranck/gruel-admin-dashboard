@@ -1,3 +1,11 @@
+import { Gallery } from '../components/galery/Gallery';
+import { Toaster } from 'sonner';
+
 export function Galery() {
-    return <h1>Galerie</h1>;
+    return (
+        <div>
+            <Gallery />
+            <Toaster position="top-right" />
+        </div>
+    );
 }

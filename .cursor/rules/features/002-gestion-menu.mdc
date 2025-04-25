@@ -1,0 +1,86 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: Règle Cursor pour la gestion hiérarchique du menu dans l’admin Gruel Traiteur
+globs: ["components/app/menu/**/*.tsx", "pages/galery."]
+alwaysApply: false
+---
+
+## 🎯 Objectif
+
+Créer une interface d’administration permettant la gestion du menu dynamique :
+
+- Organisation en 2 niveaux imbriqués :
+  - **Section** (ex: "Au magasin")
+    - **Sous-section** (ex: "Les entrées (2 plats)")
+
+- Permettre à l’admin :
+  - D’ajouter, modifier, supprimer chaque élément
+  - De réorganiser les éléments via **drag-and-drop**
+  - D’avoir un retour visuel clair lors du déplacement
+  - D’être averti avant toute suppression
+
+---
+
+## 🔁 Comportements attendus
+
+- **Drag-and-drop** :
+  - Utiliser `@dnd-kit/core`
+  - Les éléments doivent être déplaçables **à leur niveau** :
+    - Sections entre elles
+    - Sous-sections au sein d’une section
+
+- **Ajout / modification / suppression** :
+  - Utiliser des **modales** ou des **formulaires contextuels**
+  - Comportement “in-place” si possible (inline editing)
+  - Toujours confirmer la suppression
+
+- **Sauvegarde** :
+  - Après chaque action, mettre à jour l’état avec Zustand
+  - Possibilité d’afficher un toast de succès
+
+---
+
+## 📐 UX/UI
+
+- Design clair, espacé :
+- Icônes d’action :
+- Composants repliables (ex : toggle pour cacher/afficher une sous-section)
+
+---
+
+## 📱 Responsive
+
+- L’affichage en liste verticale (mobile-first)
+- Drag-and-drop fonctionnel même sur mobile ou fallback par boutons “Monter / Descendre”
+
+---
+
+## 💾 Structure des données
+
+```ts
+type SousSection = {
+  id: string;
+  nom: string;
+  plats: Plat[];
+};
+
+type Section = {
+  id: string;
+  nom: string;
+  sousSections: SousSection[];
+};
+
+```
+---
+
+
+## 🧠 Conseils pour l’IA
+
+- Préserver l’imbrication et l’ordre dans le rendu
+- Isoler la logique de déplacement dans des hooks
+- Créer un composant unique par niveau hiérarchique
+- Toujours prévoir une sauvegarde ou un effet local après action

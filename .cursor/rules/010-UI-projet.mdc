@@ -32,9 +32,9 @@ alwaysApply: true
 - **Vue arborescente interactive** du menu complet
 - **Zone de drag-and-drop** avec représentation visuelle claire
 - **Organisation hiérarchique** : 
+  - Pages statiques (forme distincte pour différenciation visuelle)
   - Sections (rectangles larges)
   - Sous-sections (rectangles moyens indentés)
-  - Pages statiques (forme distincte pour différenciation visuelle)
 - **Boutons d'action** : Ajouter section/sous-section, Réorganiser, Enregistrer
 - **Aperçu en temps réel** du menu tel qu'il apparaîtra sur le site
 

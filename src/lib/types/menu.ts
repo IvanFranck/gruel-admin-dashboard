@@ -16,6 +16,7 @@ export type Section = {
   id: string;
   nom: string;
   sousSections: SousSection[];
+  visible: boolean;
 };
 
 export type DragItem = {

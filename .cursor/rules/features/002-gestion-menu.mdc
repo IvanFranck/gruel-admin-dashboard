@@ -71,6 +71,7 @@ type SousSection = {
 type Section = {
   id: string;
   nom: string;
+  visible: boolean;
   sousSections: SousSection[];
 };
 

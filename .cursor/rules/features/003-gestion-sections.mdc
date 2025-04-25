@@ -1,0 +1,93 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: Gestion des sections dans l’administration Gruel Traiteur
+globs: ["app/admin/sections/**/*.tsx"]
+alwaysApply: false
+---
+
+## 🎯 Objectif
+
+Permettre à l’utilisateur de :
+- Voir la liste des sections existantes
+- Créer une nouvelle section
+- Modifier une section
+- Gérer ses sous-sections (édition, ajout, suppression, tri par drag-and-drop)
+- Contrôler la visibilité d’une section dans le menu public
+
+---
+
+## 🧾 Fonctionnalités
+
+### 1. 🗂️ Data Table des Sections
+
+- Affichage des sections sous forme de tableau :
+  - Nom de la section
+  - Statut (active/inactive)
+  - Boutons d’action : **Détails**, **Modifier**, **Supprimer**
+
+- Statut affiché sous forme de badge (différencier **actif** de **inactif**)
+
+### 2. 📝 Formulaire de création/édition
+
+- Champs :
+  - `Nom de la section` (obligatoire)
+  - `Visibilité dans le menu` (toggle switch)
+- Boutons :
+  - Sauvegarder
+  - Annuler / Fermer
+
+- Validation :
+  - Nom requis
+  - Afficher les erreurs sous le champ
+
+### 3. 🧩 Détail d’une Section (Drawer ou Modal)
+
+- Affiche la **liste des sous-sections** :
+  - Nom
+  - Boutons d’action : Modifier, Supprimer
+- Utiliser `@TanStask Table` et le composant `Data Table` de Shadcn UI pour la liste 
+- Ajout de sous-section (inline)
+- Édition rapide des sous-sections
+- **Drag & drop** pour réorganiser les sous-sections :
+  - Utiliser `@dnd-kit`
+  - Rendu avec retour visuel (élévation, ombrage)
+- Modification de la section principale (nom + visibilité)
+- Sauvegarde déclenchée après action ou manuellement
+
+
+---
+
+## 📐 UI/UX
+
+- Responsive
+- Design sobre et lisible
+- Afficher un `toast` ou message après chaque action réussie
+
+
+---
+
+## 🧠 Conseils pour l’IA
+
+- Réutiliser le même composant pour création et édition (via props)
+- Stocker les sous-sections dans un `useState`
+- Gérer la logique d’ordre dans un hook personnalisé `useSortableList()`
+- Réutiliser des states Globaux Zustand s'il en exite et ne pas hésiter à les modifier si celà semble judicieux ou alors créer en un nouveau. Si l'utilisation d'un state existant a été choisi, s'assurer que sa modication ou son usage n'a pas créer de régressions ailleurs.
+- Prévoir une structure typée (la créer si elle n'existe pas déjà):
+
+```ts
+type SousSection = {
+  id: string;
+  nom: string;
+  plats: Plat[];
+};
+
+type Section = {
+  id: string;
+  nom: string;
+  visible: boolean;
+  sousSections: SousSection[];
+};

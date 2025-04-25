@@ -17,6 +17,7 @@ const exampleData: Section[] = [
     {
         id: uuidv4(),
         nom: 'Au Magasin',
+        visible: true,
         sousSections: [
             {
                 id: uuidv4(),
@@ -48,6 +49,7 @@ const exampleData: Section[] = [
     {
         id: uuidv4(),
         nom: 'St Valentin',
+        visible: true,
         sousSections: [
             {
                 id: uuidv4(),

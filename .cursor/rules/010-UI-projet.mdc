@@ -1,0 +1,93 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: Spécification de l’interface admin pour Cursor (basée sur la maquette UI Gruel Traiteur)
+alwaysApply: true
+---
+
+# Structure de l'UI d'administration - Gruel Traiteur
+
+## 1. Tableau de bord principal
+
+- **En-tête** : Logo Gruel Traiteur, nom de l'utilisateur connecté, bouton de déconnexion
+- **Menu latéral gauche** : Navigation principale entre les différentes sections de l'administration
+- **Zone centrale** : Widgets de résumé (statistiques du site, modifications récentes, accès rapides)
+- **Pied de page** : Version du système, lien vers l'aide
+
+## 2. Navigation principale (menu latéral)
+
+- **Accueil dashboard**
+- **Structure du menu** (fonction critique)
+- **Pages statiques**
+- **Sections et plats**
+- **Galerie d'images**
+- **Livraison**
+- **Paramètres**
+
+## 3. Gestionnaire de menu (fonction critique)
+
+- **Vue arborescente interactive** du menu complet
+- **Zone de drag-and-drop** avec représentation visuelle claire
+- **Organisation hiérarchique** : 
+  - Sections (rectangles larges)
+  - Sous-sections (rectangles moyens indentés)
+  - Pages statiques (forme distincte pour différenciation visuelle)
+- **Boutons d'action** : Ajouter section/sous-section, Réorganiser, Enregistrer
+- **Aperçu en temps réel** du menu tel qu'il apparaîtra sur le site
+
+## 4. Gestion des sections et sous-sections
+
+- **Liste des sections existantes** avec statut (active/inactive)
+- **Formulaire de création/édition de section** :
+  - Champ nom de la section
+  - Bouton pour ajouter/créer sous-sections
+  - Option de visibilité dans le menu
+  - Bouton de sauvegarde
+- **Interface de gestion des sous-sections** :
+  - Liste des sous-sections liées à une section
+  - Affichage du nombre de plats dans chaque sous-section
+  - Drag-and-drop pour réorganiser l'ordre
+
+## 5. Gestion des plats
+
+- **Recherche et filtres** par section/sous-section
+- **Liste des plats** avec miniature, titre, prix et sous-section associée
+- **Formulaire de création/édition** :
+  - Titre du plat
+  - Description avec éditeur simplifié
+  - Sélecteur de section/sous-section (dropdown hiérarchique)
+  - Gestion du prix
+  - Sélecteur d'image (depuis la galerie ou upload)
+  - Toggle pour activation/désactivation
+
+## 6. Galerie d'images
+
+- **Affichage en grille** avec miniatures et infos basiques
+- **Zone de drag-and-drop** pour upload multiple
+- **Bouton d'upload classique** en alternative
+- **Actions sur les images** : 
+  - Sélection multiple
+  - Édition de métadonnées (alt, titre)
+  - Suppression (avec confirmation)
+  - Recherche par nom
+- **Filtres** par date d'ajout ou utilisation dans le site
+
+## 7. Gestion page Livraison
+
+- **Interface dédiée simplifiée** :
+  - Champs pour les tarifs des formules 1 et 2
+  - Zone d'édition pour le menu de la semaine
+  - Option de téléchargement d'image ou saisie de texte
+  - Aperçu en temps réel des modifications
+
+## 8. Design et expérience utilisateur
+
+- **Système de confirmations visuelles** après chaque action importante
+- **Messages d'aide contextuels** (tooltips) sur les fonctions complexes
+- **Design épuré** utilisant les codes visuels du site public
+- **Code couleur intuitif** pour les différents types d'actions
+- **Responsive design** pour l'administration également
+- **Thème cohérent** avec l'identité visuelle de Gruel Traiteur

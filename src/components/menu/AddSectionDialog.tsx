@@ -32,6 +32,7 @@ export function AddSectionDialog({ open, onOpenChange }: AddSectionDialogProps) 
             id: uuidv4(),
             nom: values.nom,
             sousSections: [],
+            visible: true,
         });
         form.reset();
         onOpenChange(false);

@@ -14,6 +14,7 @@ import {
     SidebarMenuSub,
 } from "@/components/ui/sidebar";
 import { Home } from "lucide-react"; // Assurez-vous d'importer les icônes nécessaires
+import { Link } from "react-router-dom";
 
 export function AppSidebar() {
     return (
@@ -28,17 +29,17 @@ export function AppSidebar() {
                         <SidebarMenu>
                             <SidebarMenuItem>
                                 <SidebarMenuButton asChild>
-                                    <a href="/">
+                                    <Link to="/">
                                         <Home className="mr-2" />
                                         Accueil
-                                    </a>
+                                    </Link>
                                 </SidebarMenuButton>
                             </SidebarMenuItem>
                             <SidebarMenuItem>
                                 <SidebarMenuButton asChild>
-                                    <a href="/menu">
+                                    <Link to="/menu">
                                         Gestion du menu
-                                    </a>
+                                    </Link>
                                 </SidebarMenuButton>
                             </SidebarMenuItem>
                             <SidebarMenuItem>
@@ -48,41 +49,41 @@ export function AppSidebar() {
                                 <SidebarMenuSub>
                                     <SidebarMenuItem>
                                         <SidebarMenuButton asChild>
-                                            <a href="/sections">
+                                            <Link to="/sections">
                                                 Sections
-                                            </a>
+                                            </Link>
                                         </SidebarMenuButton>
                                     </SidebarMenuItem>
                                 </SidebarMenuSub>
                                 <SidebarMenuSub>
                                     <SidebarMenuItem>
                                         <SidebarMenuButton asChild>
-                                            <a href="/subsections">
+                                            <Link to="/subsections">
                                                 Sous-sections
-                                            </a>
+                                            </Link>
                                         </SidebarMenuButton>
                                     </SidebarMenuItem>
                                 </SidebarMenuSub>
                             </SidebarMenuItem>
                             <SidebarMenuItem>
                                 <SidebarMenuButton asChild>
-                                    <a href="/dishes">
+                                    <Link to="/dishes">
                                         Gestion des Plats
-                                    </a>
+                                    </Link>
                                 </SidebarMenuButton>
                             </SidebarMenuItem>
                             <SidebarMenuItem>
                                 <SidebarMenuButton asChild>
-                                    <a href="/delivery">
+                                    <Link to="/delivery">
                                         Livraison
-                                    </a>
+                                    </Link>
                                 </SidebarMenuButton>
                             </SidebarMenuItem>
                             <SidebarMenuItem>
                                 <SidebarMenuButton asChild>
-                                    <a href="/galery">
+                                    <Link to="/galery">
                                         Galerie
-                                    </a>
+                                    </Link>
                                 </SidebarMenuButton>
                             </SidebarMenuItem>
                         </SidebarMenu>

@@ -1,0 +1,65 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: Contexte global de l’application admin pour Gruel Traiteur
+alwaysApply: true
+---
+
+## 🧾 Contexte métier
+
+Le client Gruel Traiteur gère un site de vente de plats traiteurs. Il doit pouvoir administrer son menu (sections, sous-sections, plats), modifier les pages fixes (Accueil, Livraison, Contact), et gérer les images.
+
+L’ancien site était difficile à maintenir. L’objectif est de créer une interface d’administration claire, simple et mobile-first, sans CMS.
+
+## ⚙️ Objectif de l’interface admin
+
+Permettre au client de :
+- Créer, éditer, supprimer : Sections, Sous-sections, Plats
+- Modifier les contenus des pages fixes (Accueil, Livraison, Contact)
+- Gérer les images (galerie, upload en lot)
+- Modifier les tarifs de livraison et menus hebdomadaires
+
+L'interface est composée :
+- D’un layout admin avec sidebar à gauche (navigation) + contenu principal
+- D’un système de drag-and-drop pour gérer les menus dynamiques
+- De formulaires ergonomiques et validés
+- D’un design responsive, pensé pour l’usage sur tablette et mobile
+
+## 🧱 Technologies utilisées
+
+- Frontend : React + TypeScript
+- Styling : Tailwind CSS
+- Formulaires : react-hook-form + zod
+- Drag & Drop : @dnd-kit/core
+- UI : Composants réutilisables (boutons, inputs, cartes, etc.) avec Shadcn UI
+
+## 🧠 Logique de données
+
+- Section : contient des sous-sections
+- Sous-section : contient des plats
+- Plat : titre, description, prix, image
+
+Modèle imbriqué typique :
+
+```json
+{
+  "section": {
+    "nom": "Au Magasin",
+    "sousSections": [
+      {
+        "nom": "Les Entrées",
+        "plats": [
+          {
+            "titre": "Salade de chèvre",
+            "prix": "9.50€",
+            "description": "Servie tiède, avec miel",
+            "image": "/img/salade.jpg"
+          }
+        ]
+      }
+    ]
+  }
+}

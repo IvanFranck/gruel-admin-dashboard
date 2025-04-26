@@ -1,11 +1,11 @@
 ---
 description: 
-globs: 
+globs: src/pages/**/*.tsx,src/components/admin/sections/**/*.tsx
 alwaysApply: false
 ---
 ---
 description: Gestion des sections dans l’administration Gruel Traiteur
-globs: ["app/admin/sections/**/*.tsx"]
+globs: ["src/pages/**/*.tsx"]
 alwaysApply: false
 ---
 

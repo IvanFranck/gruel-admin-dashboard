@@ -65,7 +65,7 @@ export function SectionsTable({
                                             Visible
                                         </Badge>
                                     ) : (
-                                        <Badge variant="secondary">Masquée</Badge>
+                                        <Badge variant="secondary" className="bg-gray-500 hover:bg-gray-600 text-white">Masquée</Badge>
                                     )}
                                 </TableCell>
                                 <TableCell className="text-right">

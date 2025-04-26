@@ -1,0 +1,108 @@
+---
+description: 
+globs: src/pages/plats/**/*.tsx,src/components/admin/plats/**/*.tsx
+alwaysApply: false
+---
+---
+description: Règle Cursor pour la gestion des plats dans l’administration Gruel Traiteur
+globs: ["src/pages/plats/**/*.tsx", "src/components/admin/plats/**/*.tsx"]
+alwaysApply: false
+---
+
+## 🎯 Objectif
+
+Permettre à l’admin de :
+- Visualiser tous les plats existants
+- Rechercher et filtrer les plats par section et sous-section
+- Ajouter, modifier, supprimer un plat
+- Associer un plat à une sous-section existante
+- Gérer l’image du plat (sélection depuis galerie ou upload)
+
+---
+
+## 🗂️ Fonctionnalités attendues
+
+### 1. 🔎 Recherche et filtres
+
+- Champ de recherche par titre (`input` + icône search)
+- Filtres par :
+  - Section
+  - Sous-section
+- Dropdown hiérarchique pour les filtres :
+  - Affiche d'abord la section, puis sous-section imbriquée
+
+### 2. 📋 Liste des plats
+
+- Affichage sous forme de cartes :
+  - Miniature (image)
+  - Titre du plat
+  - Prix
+  - Sous-section associée
+- Actions disponibles :
+  - Modifier
+  - Supprimer (avec confirmation)
+
+### 3. 📝 Formulaire de création/édition
+
+- Champs :
+  - **Titre** (obligatoire)
+  - **Description** (éditeur simplifié : textarea stylée Tailwind ou mini-wysiwyg très light)
+  - **Sélection Section/Sous-section** (dropdown imbriqué)
+  - **Prix** (champ numérique avec validation)
+  - **Image** :
+    - Sélecteur pour choisir dans la galerie existante
+    - Ou possibilité d’uploader une nouvelle image
+- Boutons :
+  - Sauvegarder
+  - Annuler
+
+- Validation :
+  - Tous les champs requis sauf image (facultative)
+  - Prix : format numérique uniquement
+
+---
+
+## 📐 UX/UI
+
+- Composants aérés
+- affichage des plats sous forme de grille avec pagination ou bouton "load more"
+- Boutons d’actions discrets (`icon buttons`) pour éditer ou supprimer
+- Messages de confirmation avant suppression
+- Toasts pour feedback après ajout/édition/suppression
+
+---
+
+## 📱 Responsive
+
+- Grille responsive pour l’affichage des plats
+- Formulaire sur une colonne en mobile
+- Dropdowns utilisables facilement sur petits écrans
+
+---
+
+## 💾 Structures de données
+
+```ts
+type Plat = {
+  id: string;
+  titre: string;
+  description: string;
+  prix: number;
+  image?: string; // URL
+  sousSectionId: string;
+};
+```
+
+---
+
+## 🧠 Conseils pour l’IA
+
+Utiliser `react-hook-form` pour la gestion du formulaire
+
+Utiliser `zod` pour la validation des champs
+
+Gérer la sélection de section/sous-section dans un hook 
+
+Prévoir un fallback visuel si aucune image n’est sélectionnée
+
+Prévoir un loading state lors du chargement des plats ou filtres

@@ -13,7 +13,7 @@ import {
     SidebarGroupContent,
     SidebarMenuSub,
 } from "@/components/ui/sidebar";
-import { Home } from "lucide-react"; // Assurez-vous d'importer les icônes nécessaires
+import { Home, Menu as MenuIcon, List, Utensils, Truck, Image } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export function AppSidebar() {
@@ -38,12 +38,14 @@ export function AppSidebar() {
                             <SidebarMenuItem>
                                 <SidebarMenuButton asChild>
                                     <Link to="/menu">
+                                        <MenuIcon className="mr-2" />
                                         Gestion du menu
                                     </Link>
                                 </SidebarMenuButton>
                             </SidebarMenuItem>
                             <SidebarMenuItem>
                                 <SidebarMenuButton>
+                                    <List className="mr-2" />
                                     Sections & Sous-sections
                                 </SidebarMenuButton>
                                 <SidebarMenuSub>
@@ -67,7 +69,8 @@ export function AppSidebar() {
                             </SidebarMenuItem>
                             <SidebarMenuItem>
                                 <SidebarMenuButton asChild>
-                                    <Link to="/dishes">
+                                    <Link to="/plats">
+                                        <Utensils className="mr-2" />
                                         Gestion des Plats
                                     </Link>
                                 </SidebarMenuButton>
@@ -75,6 +78,7 @@ export function AppSidebar() {
                             <SidebarMenuItem>
                                 <SidebarMenuButton asChild>
                                     <Link to="/delivery">
+                                        <Truck className="mr-2" />
                                         Livraison
                                     </Link>
                                 </SidebarMenuButton>
@@ -82,6 +86,7 @@ export function AppSidebar() {
                             <SidebarMenuItem>
                                 <SidebarMenuButton asChild>
                                     <Link to="/galery">
+                                        <Image className="mr-2" />
                                         Galerie
                                     </Link>
                                 </SidebarMenuButton>

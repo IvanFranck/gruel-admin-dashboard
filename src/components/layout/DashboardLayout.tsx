@@ -3,12 +3,12 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Home } from '../../pages/Home';
 import { Menu } from '../../pages/Menu';
 import { SubSections } from '../../pages/SubSections';
-import { Dishes } from '../../pages/Dishes';
 import { Galery } from '../../pages/Galery';
 import { Delivery } from '../../pages/Delivery';
 import { SidebarProvider, SidebarTrigger } from '../ui/sidebar';
 import { SectionDetailsPage } from '@/pages/sections/Details';
 import { SectionsList } from '@/pages/sections/Index';
+import { PlatsList } from '@/pages/plats/Index';
 
 export function DashboardLayout() {
     return (
@@ -26,7 +26,7 @@ export function DashboardLayout() {
                                 <Route path="/sections/:id" element={<SectionDetailsPage />} />
                             </Route>
                             <Route path="/subsections" element={<SubSections />} />
-                            <Route path="/dishes" element={<Dishes />} />
+                            <Route path="/plats" element={<PlatsList />} />
                             <Route path="/galery" element={<Galery />} />
                             <Route path="/delivery" element={<Delivery />} />
                         </Routes>

@@ -1,11 +1,11 @@
 ---
 description: 
-globs: src/pages/**/*.tsx,src/components/admin/sections/**/*.tsx
+globs: src/components/admin/sections/**/*.tsx,src/pages/sections/**/*.tsx
 alwaysApply: false
 ---
 ---
 description: Gestion des sections dans l’administration Gruel Traiteur
-globs: ["src/pages/**/*.tsx"]
+globs: ["src/pages/sections/**/*.tsx", "src/components/admin/sections/**/*.tsx"]
 alwaysApply: false
 ---
 
@@ -73,7 +73,6 @@ Permettre à l’utilisateur de :
 ## 🧠 Conseils pour l’IA
 
 - Réutiliser le même composant pour création et édition (via props)
-- Stocker les sous-sections dans un `useState`
 - Gérer la logique d’ordre dans un hook personnalisé `useSortableList()`
 - Réutiliser des states Globaux Zustand s'il en exite et ne pas hésiter à les modifier si celà semble judicieux ou alors créer en un nouveau. Si l'utilisation d'un state existant a été choisi, s'assurer que sa modication ou son usage n'a pas créer de régressions ailleurs.
 - Prévoir une structure typée (la créer si elle n'existe pas déjà):
